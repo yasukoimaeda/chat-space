@@ -17,8 +17,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -28,8 +28,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 |body|text|
 |image|string|
 
@@ -38,6 +38,8 @@
 - belongs_to :user
 
 ## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |groupname|string|null: false, unique: true|
 
 ### Association
