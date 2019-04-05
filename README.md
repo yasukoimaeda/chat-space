@@ -4,9 +4,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|index: true, null: false, unique: true|
-|name|string|index: true, null: false, unique: true|
-|mail|integer|null: false, unique: true|
+|nickname|string|index: true, null: false, unique: true|
+|email|string|null: false, unique: true|
+
+### Association
+- has_many :groups, through: :memebers
+- has_many :messages
+- has_many :members
 
 
 ## membersテーブル
@@ -26,9 +30,18 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|body|text|null: false, foreign_key: true|
-|image|string|null: false, foreign_key: true|
+|body|text|
+|image|string|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+## groupsテーブル
+|groupname|string|null: false, unique: true|
+
+### Association
+- has_many :users, through: :memebers
+- has_many :messages
+- has_many :members
+
