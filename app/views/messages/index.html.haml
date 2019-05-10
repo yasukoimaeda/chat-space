@@ -1,0 +1,72 @@
+.notification
+  .notice
+    グループを作成しました
+.wrapper
+  .side-bar
+    .header
+      %h3.header__name
+        やすこ
+      %ul.header__lists
+        %li.list
+        =link_to'/groups/new' do
+          %i.fa.fa-pencil-square-o.icon
+
+        %li.list
+        =link_to'/users/1/edit' do
+          %i.fa.fa-cog.icon
+
+    .groups
+      .group
+      =link_to'/groups/1/messages' do
+        .group__name
+
+          UUU
+        .group__message
+
+          Hello
+      .group
+      =link_to'/groups/2/messages' do
+        .group__name
+          aaaaaaaaaa
+        .group__message
+          まだメッセージはありません。
+      .group
+      =link_to'/groups/3/messages' do
+        .group__name
+          sample
+        .group__message
+          まだメッセージはありません。
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          掲示板1
+        %ul.left-header__members
+          Member：
+          %li.member
+            QQQ
+      .right-header
+        %a.right-header__button Edit
+    .messages
+
+      .message
+        .upper-message
+          .upper-message__user-name
+            AAA
+          .upper-message__date
+            2019-04-30
+        .lower-message
+          %p.lower-message__content
+            Hello!
+    .form
+      %input#message_content.form__message{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+      / placeholdserでtype a messageという文を出現させる
+      .form__mask
+        %label.form__mask__image{:for => "message_image"}
+          %i.fa.fa-picture-o.icon
+            / 写真のアイコンを出現させる
+          %input#message_image.hidden{:name => "message[image]", :type => "file"}/
+          / input要素はtypeを指定することでsubmitボタンやファイル選択ボタンを設置することができる
+          / hiddenによってファイル選択のアイコンだけ見せるようにする
+      %input.form__submit{:name => "commit", :type => "submit", :value => "Send"}/
+      / value属性によってボタンの名前を表示させる
