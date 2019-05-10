@@ -3,7 +3,7 @@
   color: $white-color;
   width: 300px;
   .header {
-    background-color: #253141:
+    background-color: #253141;
     height: 100px;
     line-height: 100px;
     padding: 0 20px;
@@ -29,7 +29,7 @@
   height: calc(100vh - 100px);
   padding:0 20px;
   .group{
-    box-sizing:border-box;
+    box-sizing: border-box;
     padding: 20px 0 40px;
     &_name{
       color: $white-color;
